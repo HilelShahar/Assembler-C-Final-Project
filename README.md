@@ -7,7 +7,7 @@ In the first pass, whenever an operand is recognized as a potential label, it is
 This approach efficiently scans the source code, while handling all type of potential errors and creating the relevant output files.
 
 # Overview of Stages
-1. Pre-processing (pre_proc):
+Pre-processing (pre_proc):
 
 The pre-processing stage reads the input file once.
 Macro Management: Handles macro declarations and calls.
@@ -15,7 +15,7 @@ Error Handling: Identifies and reports errors related to macros.
 File Generation: Replaces all macro calls with their corresponding content and removes the original macro declarations.
 Single Pass: All the above tasks are completed in a single pass.
 
-2. First Pass:
+First Pass:
 
 The file is read a second time.
 Error Detection: Detects errors in instructions and operations.
@@ -23,7 +23,7 @@ Validation: Validates instructions against expected formats.
 Machine Coding: Generates initial machine code.
 Uncoded Words: Marks placeholders for unresolved labels to ensure the file is only read twice.
 
-3. Second Pass:
+Second Pass:
 
 Finalization: Resolves uncoded words from the first pass.
 Label Matching: Matches placeholders with corresponding label addresses.

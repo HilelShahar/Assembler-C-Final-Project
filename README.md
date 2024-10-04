@@ -1,5 +1,5 @@
-# Assembler-C-Final-Project (20465)
-# Project Grade - 100
+# Assembler-C-Final-Project (Grade - 100)
+# (20465)
 # 📋 Project Overview
 This is an assembler project for a specific assembly language defined by the project's requirements.
 This assembler only reads the source file twice by using a unique approach that signals uncoded label addresses during the first pass.

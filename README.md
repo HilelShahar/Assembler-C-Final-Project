@@ -1,7 +1,7 @@
 # Assembler-C-Final-Project (Grade - 💯)
 (The Open University 2024B Course 20465)
 # 📋 Project Overview
-This is an assembler project written in C(90) designed for a specific assembly language defined by the project's requirements.
+This is an assembler project written in C90 (ANSI) designed for a specific assembly language defined by the project's requirements.
 This assembler only reads the source file twice by using a unique approach that signals uncoded label addresses during the first pass.
 In the first pass, whenever an operand is recognized as a potential label, it is added to the labels list as type "operand", and its address is marked as uncoded in the instruction array by setting bit 0 for "external" and bit 1 for "relocatable" (coded addresses will not have these two bits "on"). This ensures a perfect match between the next uncoded label and the corresponding operand label. During the second pass, the machine code is completed since all label addresses are now known. The process involves retrieving the next uncoded "word" from the instruction array, matching it with the next operand label, verifying if it was defined (checking if the label exists in the list not as type "operand"), and then updating the address accordingly.
 This approach efficiently scans the source code, while handling all type of potential errors and creating the relevant output files.

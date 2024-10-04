@@ -1,4 +1,4 @@
-# Assembler-C-Final-Project (Grade - 100)
+# Assembler-C-Final-Project (Grade-💯)
 # (20465)
 # 📋 Project Overview
 This is an assembler project for a specific assembly language defined by the project's requirements.

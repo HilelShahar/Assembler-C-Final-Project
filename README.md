@@ -7,7 +7,7 @@ In the first pass, whenever an operand is recognized as a potential label, it is
 This approach efficiently scans the source code, while handling all type of potential errors and creating the relevant output files.
 
 # Overview of Stages
-Pre-processing (pre_proc):
+Pre-processing:
 
 The pre-processing stage reads the input file once.
 Macro Management: Handles macro declarations and calls.
@@ -29,7 +29,7 @@ Finalization: Resolves uncoded words from the first pass.
 Label Matching: Matches placeholders with corresponding label addresses.
 Complete Machine Code: Updates and finalizes the machine code, ensuring all addresses are correctly resolved.
 
-Additional Notes
+Additional Notes 📝
 Error Handling: Some errors will not be detected in the earlier steps.
 For example, undefined labels will only be detected during the second pass because labels can be used before they are defined, so for the error to be detected the first pass must be successfully completed first.
 

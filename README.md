@@ -15,7 +15,7 @@ Error Handling: Identifies and reports errors related to macros.
 File Generation: Replaces all macro calls with their corresponding content and removes the original macro declarations.
 Single Pass: All the above tasks are completed in a single pass.
 
-First Pass:
+* First Pass:
 
 The file is read a second time.
 Error Detection: Detects errors in instructions and operations.

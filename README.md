@@ -35,4 +35,4 @@ For example, undefined labels will only be detected during the second pass becau
 
 Memory Management: The use of static variables was generally avoided, and so they were only used with dynamic data structures handled through linked lists for macros, labels, and memory nodes. This allows for efficient memory management and easy freeing of unused memory at any point in the program, without the need to pass "head" pointers between functions.
 
-Shahar Hilel
+Shahar Hilel ©

@@ -33,7 +33,7 @@ Resolving uncoded words from the first pass.
 **Error Handling:**
 
 Some errors will not be detected in the earlier steps.
-For example, undefined labels will only be detected during the second pass because labels can be used before they are defined, so for the error to be detected the first pass must be successfully completed first.
+For example, undefined labels will only be detected during the second pass because labels can be used before they are defined, so for the error to be detected- the first pass must be successfully completed first.
 
 **Memory Management:**
 

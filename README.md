@@ -2,8 +2,13 @@
 (The Open University 2024B Course 20465)
 # Project Overview 📋
 This is an assembler project written in C90 (ANSI) designed for a specific assembly language defined by the project's requirements.
-This assembler only reads the source file twice by using a unique approach that signals uncoded label addresses during the first pass.
-In the first pass, whenever an operand is recognized as a potential label, it is added to the labels list as type "operand", and its address is marked as uncoded in the instruction array by setting bit 0 for "external" and bit 1 for "relocatable" (coded addresses will not have these two bits "on"). This ensures a perfect match between the next uncoded label and the corresponding operand label. During the second pass, the machine code is completed since all label addresses are now known. The process involves retrieving the next uncoded "word" from the instruction array, matching it with the next operand label, verifying if it was defined (checking if the label exists in the list not as type "operand"), and then updating the address accordingly.
+The assembler's core feature is its unique approach to completing the assembly process in just two passes over the source code. This is achieved by efficiently flagging and resolving label addresses in the first pass.
+In the first pass, when an operand is identified as a potential label, it is added to the labels list as type "operand". In the instruction array, its address is marked as uncoded by setting:
+- Bit 0 → indicates external
+- Bit 1 → indicates relocatable
+Coded addresses will have both bits turned off.
+This ensures a perfect match between the next uncoded label and the corresponding operand label.
+During the second pass, the machine code is completed since all label addresses are now known. The process involves retrieving the next uncoded "word" from the instruction array, matching it with the next operand label, verifying if it was defined (checking if the label exists in the list not as type "operand"), and then updating the address accordingly.
 This approach efficiently scans the source code, while handling all type of potential errors and creating the relevant output files.
 
 # Stages Overview 🟢🟡🔴 
@@ -28,15 +33,21 @@ The file is read a second time.
 Resolving uncoded words from the first pass.
 - Label Matching: Matches placeholders with corresponding label addresses.
 - Complete Machine Code: Updates and finalizes the machine code, ensuring all addresses are correctly resolved.
+- File Generation: Creates the final object, entry, and extern files.
 
 # 📝 Additional Notes
-**Error Handling:**
+⚠️ **Error Handling:**
 
 Some errors will not be detected in the earlier steps.
-For example, undefined labels will only be detected during the second pass because labels can be used before they are defined, so for the error to be detected- the first pass must be successfully completed first.
+For example, undefined labels will only be detected during the second pass because labels can be used before they are declared, so for the error to be detected- the first pass must be successfully completed.
 
-**Memory Management:**
+🧠 **Memory Management:**
 
-The use of static variables was generally avoided, and so they were only used with dynamic data structures handled through linked lists for macros, labels, and memory nodes. This allows for efficient memory management and easy freeing of unused memory at any point in the program, without the need to pass "head" pointers between functions.
+The use of static variables was generally avoided, and so they were only used with dynamic data structures handled through linked lists for macros, labels, and memory nodes. 
+
+This design:
+- Promotes efficient memory usage
+- Allows memory to be freed at any time
+- Avoids the need to pass head pointers between functions
 
 **Shahar Hilel ©**

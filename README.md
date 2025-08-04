@@ -6,9 +6,12 @@ The assembler's core feature is its unique approach to completing the assembly p
 In the first pass, when an operand is identified as a potential label, it is added to the labels list as type "operand". In the instruction array, its address is marked as uncoded by setting:
 - Bit 0 → indicates external
 - Bit 1 → indicates relocatable
+
 Coded addresses will have both bits turned off.
+
 This ensures a perfect match between the next uncoded label and the corresponding operand label.
-During the second pass, the machine code is completed since all label addresses are now known. The process involves retrieving the next uncoded "word" from the instruction array, matching it with the next operand label, verifying if it was defined (checking if the label exists in the list not as type "operand"), and then updating the address accordingly.
+During the second pass, the machine code is completed since all label addresses are now known. The process involves retrieving the next uncoded "word" from the instruction array, matching it with the next operand label, verifying that it was defined (checking if the label exists in the list not as type "operand"), and then updating the address accordingly.
+
 This approach efficiently scans the source code, while handling all type of potential errors and creating the relevant output files.
 
 # Stages Overview 🟢🟡🔴 
@@ -39,7 +42,7 @@ Resolving uncoded words from the first pass.
 ⚠️ **Error Handling:**
 
 Some errors will not be detected in the earlier steps.
-For example, undefined labels will only be detected during the second pass because labels can be used before they are declared, so for the error to be detected- the first pass must be successfully completed.
+For example, undefined labels will only be detected during the second pass because labels can be used before they are defined, so for the error to be detected- the first pass must be successfully completed.
 
 🧠 **Memory Management:**
 

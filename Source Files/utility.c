@@ -74,15 +74,15 @@ void free_all_memory() {
     head = NULL;
 }
 
-FILE *search_file(char *filename) {
+int file_exists(char *filename) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
         printf("\n [CODE_3] | ERROR | File \"%s\" was not found",filename);
         free_all_memory();
-        return NULL;
+        return 0;
     }
     fclose(file);
-    return file;
+    return 1;
 }
 
 void delete_file(char *filename) {

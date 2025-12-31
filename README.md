@@ -41,6 +41,10 @@ make
 ▶️ Usage
 
 Run the assembler on one or more input files:
+
+(Input the file name "ps" to run the project's example)
+
+
 ```bash
 ./assembler <file1> <file2> ...
 ```

@@ -39,18 +39,15 @@ cd Assembler-C-Final-Project
 make
 ```
 ▶️ Usage
-
+-
 Run the assembler on one or more input files:
-
-(Input the file name "ps" to run the project's example)
-
-
 ```bash
 ./assembler <file1> <file2> ...
 ```
+(Input the file name "ps" to run the project's example)
 
 🧾 Output Files
-
+-
 For each input file, the assembler may generate:
 
 file.ob — Object file (final machine code)

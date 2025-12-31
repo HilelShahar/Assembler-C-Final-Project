@@ -19,8 +19,6 @@ This approach efficiently scans the source code, while handling all type of pote
 ## ⚙️ Getting Started
 
 ### ✅ Prerequisites
-Please switch to the `linux` branch to run the project. Use the following instructions.
-
 Before you begin, ensure that you have the following prerequisites installed:
 
 - **GCC compiler**
@@ -36,11 +34,7 @@ git clone https://github.com/HilelShahar/Assembler-C-Final-Project.git
 ```bash
 cd Assembler-C-Final-Project
 ```
-3. Checkout the Linux branch:
-```bash
-git checkout linux
-```
-4. Compile using the Makefile:
+3. Compile:
 ```bash
 make
 ```

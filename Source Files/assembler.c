@@ -14,7 +14,7 @@
  */
 int main(int argc, char *argv[]) {
     int i = 1;
-    FILE *file;
+    int exists;
     char *file_name;
 
     if (argc < TWO) {  /* Checking if no files were entered */
@@ -27,8 +27,8 @@ int main(int argc, char *argv[]) {
         if (file_name == NULL)
             continue;  /* Skipping to the next file */
 
-        file = search_file(file_name);
-        if (file == NULL)
+        exists = file_exists(file_name);
+        if (!exists)
             continue;  /* Skipping to the next file */
 
         printf("\nProcessing file: \"%s\"\n",file_name);

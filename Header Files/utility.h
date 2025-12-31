@@ -45,9 +45,9 @@ void free_all_memory();
 /**
  * Searches for a file and opens it in read mode.
  * @param file_name The name of the file to search for.
- * @return Pointer to the opened file, or NULL if the file was not found.
+ * @return 1 if the file was found, else 0.
  */
-FILE *search_file(char *file_name);
+int file_exists(char *file_name);
 
 
 /**

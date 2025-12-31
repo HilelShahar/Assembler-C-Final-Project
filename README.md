@@ -14,6 +14,55 @@ During the second pass, the machine code is completed since all label addresses 
 
 This approach efficiently scans the source code, while handling all type of potential errors and creating the relevant output files.
 
+---
+
+## ⚙️ Getting Started
+
+### ✅ Prerequisites
+Please switch to the `linux` branch to run the project. Use the following instructions.
+
+Before you begin, ensure that you have the following prerequisites installed:
+
+- **GCC compiler**
+- **Linux environment** (Ubuntu recommended, others should also work)
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/HilelShahar/Assembler-C-Final-Project.git
+```
+2. Change to the project directory:
+```bash
+cd Assembler-C-Final-Project
+```
+3. Checkout the Linux branch:
+```bash
+git checkout linux
+```
+4. Compile using the Makefile:
+```bash
+make
+```
+▶️ Usage
+
+Run the assembler on one or more input files:
+```bash
+./assembler <file1> <file2> ...
+```
+
+🧾 Output Files
+
+For each input file, the assembler may generate:
+
+file.ob — Object file (final machine code)
+
+file.ent — Entry labels (if any)
+
+file.ext — External references (if any)
+
+---
+
 # Stages Overview 🟢🟡🔴 
 🔄 **Pre-processing:** 
 
